@@ -24,7 +24,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
-DEBUG = config("DJANGO_DEBUG")
+DEBUG = config("DJANGO_DEBUG", cast=bool)
 print("DEBUG:", DEBUG)
 ALLOWED_HOSTS = [
     ".railway.app",
@@ -86,7 +86,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+CONN_MAX_AGE = config("CONN_MAX_AGE", default=30, cast=int)
+DATABASE_URL = config("DATABASE_URL", cast=str)
+if DATABASE_URL is not None:
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=CONN_MAX_AGE,
+            conn_health_checks=True,)
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
