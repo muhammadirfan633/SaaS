@@ -1,7 +1,166 @@
 {% extends "base.html" %}
 
+{% block title %}TechHub – Tech Tutorials, Developer Tools & Automation Services{% endblock %}
+
 {% block content %}
-    <h1>Home</h1>
-    <p>Welcome to the home page!</p>
-    <p>This is the main landing page of the website.</p>
+
+  <!-- Hero section -->
+  <section class="py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <h1 class="display-4 fw-bold mb-3">
+          Learn, build, and automate with TechHub
+        </h1>
+        <p class="lead mb-4">
+          TechHub is your home for practical tech tutorials, free developer tools, and custom automation services.
+          Learn web development, try powerful utilities, and get help building your own projects.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/tools/" class="btn btn-primary btn-lg">
+            Explore tools
+          </a>
+          <a href="/blog/" class="btn btn-outline-secondary btn-lg">
+            Read tutorials
+          </a>
+          <a href="/services/" class="btn btn-link">
+            View services →
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="p-4 bg-white border rounded-3 shadow-sm">
+          <h2 class="h5 fw-semibold mb-3">What you’ll find on TechHub</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2">✔ Step‑by‑step tutorials on Python, Django, web scraping and web development</li>
+            <li class="mb-2">✔ Online tools: file utilities, text helpers, and (soon) an AI QA copilot for web apps</li>
+            <li class="mb-2">✔ Services: custom websites, automation scripts, and document workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorials section -->
+  <section class="py-5 border-top">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h3 mb-0">Latest tech tutorials</h2>
+      <a href="/blog/" class="btn btn-sm btn-outline-secondary">View all tutorials</a>
+    </div>
+    <p class="text-muted mb-4">
+      Learn by doing: beginner‑friendly guides on Python, Django, web scraping, and building real web projects.
+    </p>
+
+    <div class="row">
+      {# Example structure – later replace with a loop over your latest posts #}
+      <div class="col-md-4 mb-3">
+        <article class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">Getting started with Django & Railway deployment</h3>
+            <p class="card-text text-muted">
+              A practical guide to deploying your first Django app with PostgreSQL in the cloud.
+            </p>
+            <a href="/blog/" class="stretched-link">Read tutorial</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4 mb-3">
+        <article class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">Build your first online tool in Django</h3>
+            <p class="card-text text-muted">
+              Learn how to create a simple text or file utility and host it as a web tool.
+            </p>
+            <a href="/blog/" class="stretched-link">Read tutorial</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4 mb-3">
+        <article class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">Introduction to web scraping with Python</h3>
+            <p class="card-text text-muted">
+              Use Python and CSS selectors to collect data for your projects in a safe and structured way.
+            </p>
+            <a href="/blog/" class="stretched-link">Read tutorial</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools section -->
+  <section class="py-5 border-top">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h3 mb-0">Developer tools</h2>
+      <a href="/tools/" class="btn btn-sm btn-outline-secondary">Browse all tools</a>
+    </div>
+    <p class="text-muted mb-4">
+      Use free online tools to speed up your work. New micro‑SaaS utilities will be added over time.
+    </p>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">Text formatter</h3>
+            <p class="card-text text-muted">
+              Clean and format text: remove extra spaces, change case, and prepare content for documents or code.
+            </p>
+            <a href="/tools/text-formatter/" class="btn btn-sm btn-primary">Open tool</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">File utility (coming soon)</h3>
+            <p class="card-text text-muted">
+              Convert and process common file types directly in your browser.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" disabled>Coming soon</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="h5 card-title">AI QA Copilot (coming soon)</h3>
+            <p class="card-text text-muted">
+              Generate automated tests from real user flows for small web apps and agencies.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" disabled>Coming soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section class="py-5 border-top">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <h2 class="h3 mb-3">Custom development & automation services</h2>
+        <p class="text-muted mb-3">
+          Need help building your project? TechHub offers development services for small businesses, students,
+          and teams who want to automate repetitive work.
+        </p>
+        <ul class="text-muted mb-3">
+          <li>Websites and dashboards using Django</li>
+          <li>Automation scripts and web scraping (Python)</li>
+          <li>Document and file workflow tools for academic and business use</li>
+        </ul>
+        <a href="/services/" class="btn btn-primary">View services</a>
+        <a href="/contact/" class="btn btn-link">Contact for a project →</a>
+      </div>
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="p-4 bg-white border rounded-3 shadow-sm">
+          <h3 class="h6 text-uppercase text-muted mb-2">Why TechHub?</h3>
+          <p class="mb-1">• Practical experience with Python, Django, and web scraping</p>
+          <p class="mb-1">• Focus on simple, useful tools and clear documentation</p>
+          <p class="mb-0">• Step‑by‑step communication and support for non‑technical clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 {% endblock %}
