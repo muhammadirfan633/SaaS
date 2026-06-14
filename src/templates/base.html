@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}TechHub{% endblock %}</title>
+    <title>{% block title %}TechHub – Tutorials, Tools & Services{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS via CDN -->
@@ -11,35 +11,77 @@
       rel="stylesheet"
     >
   </head>
-  <body class="bg-light">
+  <body class="d-flex flex-column min-vh-100 bg-light">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">TechHub</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Tools</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/tools/">All tools</a></li>
-                <!-- later: specific tools -->
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
-          </ul>
+    <!-- Header / Navbar -->
+    <header class="border-bottom bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+            TechHub
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                  Tools
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/tools/">All tools</a></li>
+                  <!-- later: add individual tool links here -->
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services/">Services</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/about/">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-sm btn-primary" href="/contact/">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-grow-1">
+      <div class="container py-4">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-top bg-white mt-4">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-muted small">
+            © {{ now|date:"Y" }} TechHub. All rights reserved.
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex justify-content-md-end justify-content-start gap-3 small">
+              <a href="/about/" class="text-muted text-decoration-none">About</a>
+              <a href="/blog/" class="text-muted text-decoration-none">Blog</a>
+              <a href="/tools/" class="text-muted text-decoration-none">Tools</a>
+              <a href="/services/" class="text-muted text-decoration-none">Services</a>
+              <a href="/contact/" class="text-muted text-decoration-none">Contact</a>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-
-    <!-- Page content -->
-    <main class="container">
-      {% block content %}{% endblock %}
-    </main>
+    </footer>
 
     <!-- Bootstrap JS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

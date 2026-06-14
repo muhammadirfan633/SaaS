@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Services – TechHub{% endblock %}
+
+{% block content %}
+  <section class="py-4">
+    <h1 class="h2 mb-3">Services</h1>
+    <p class="text-muted mb-4">
+      TechHub offers practical development and automation services for students, small businesses,
+      and teams who want to ship faster and reduce manual work.
+    </p>
+
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5 card-title">Websites & dashboards (Django)</h2>
+            <p class="card-text text-muted">
+              Build simple, clean websites and dashboards using Django, PostgreSQL, and modern CSS frameworks.
+              Ideal for portfolios, internal tools, and small SaaS-style projects.
+            </p>
+            <ul class="text-muted small mb-3">
+              <li>Landing pages and content sites</li>
+              <li>Admin dashboards and data views</li>
+              <li>Basic authentication and user areas</li>
+            </ul>
+            <a href="/contact/" class="btn btn-sm btn-primary">Request a website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5 card-title">Automation & web scraping (Python)</h2>
+            <p class="card-text text-muted">
+              Automate repetitive tasks and collect structured data using Python scripts and web scraping
+              with proper CSS selectors and request handling.
+            </p>
+            <ul class="text-muted small mb-3">
+              <li>Data collection from websites (where allowed)</li>
+              <li>Scheduled scripts to process and export data</li>
+              <li>Custom integrations with CSV/Excel or simple dashboards</li>
+            </ul>
+            <a href="/contact/" class="btn btn-sm btn-primary">Discuss automation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5 card-title">Document & file workflow tools</h2>
+            <p class="card-text text-muted">
+              Create small tools to handle file conversions, text processing, and document workflows for
+              academic or business use.
+            </p>
+            <ul class="text-muted small mb-3">
+              <li>Simple file converters and text utilities</li>
+              <li>Formatting helpers for academic documents</li>
+              <li>Internal tools for recurring document tasks</li>
+            </ul>
+            <a href="/contact/" class="btn btn-sm btn-primary">Plan a custom tool</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4">
+      Not sure which service fits your idea? Send a short description through the
+      <a href="/contact/">contact form</a> and you’ll get a suggested approach and estimate.
+    </p>
+  </section>
+{% endblock %}
