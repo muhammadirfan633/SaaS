@@ -3,12 +3,23 @@
 {% block title %}Contact TechHub{% endblock %}
 
 {% block content %}
-  <section class="py-4">
-    <h1 class="h2 mb-3">Contact us</h1>
-    <p class="text-muted mb-4">
-      Have a project idea, need help with a tutorial, or want a custom tool? Send a message below
-      and you’ll get a reply as soon as possible.
-    </p>
+
+<section class="py-4">
+  <h1 class="h2 mb-3">Contact us</h1>
+  <p class="text-muted mb-4">
+    Have a project idea, need help with a tutorial, or want a custom tool? Send a message below
+    and you’ll get a reply as soon as possible.
+  </p>
+
+  {% if messages %}
+    <div class="mb-3">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- existing form here -->
 
     <div class="row">
       <div class="col-lg-7">
